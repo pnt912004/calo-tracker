@@ -94,6 +94,78 @@
                 </div>
                 <div class="item-total" id="vegetable-total">0 calo</div>
             </div>
+
+            <div class="food-item">
+                <div class="food-name">🥩 Thịt lợn</div>
+                <div class="food-calories">400 calo/phần</div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('pork', -1)">-</button>
+                    <input type="number" class="quantity-input" id="pork" value="0" min="0" onchange="updateTotal()">
+                    <button class="quantity-btn" onclick="changeQuantity('pork', 1)">+</button>
+                    <span style="margin-left: 10px;">phần</span>
+                </div>
+                <div class="item-total" id="pork-total">0 calo</div>
+            </div>
+
+            <div class="food-item">
+                <div class="food-name">🥬 Rau bắp cải</div>
+                <div class="food-calories">25 calo/100g</div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('cabbage', -1)">-</button>
+                    <input type="number" class="quantity-input" id="cabbage" value="0" min="0" onchange="updateTotal()">
+                    <button class="quantity-btn" onclick="changeQuantity('cabbage', 1)">+</button>
+                    <span style="margin-left: 10px;">phần (100g)</span>
+                </div>
+                <div class="item-total" id="cabbage-total">0 calo</div>
+            </div>
+
+            <div class="food-item">
+                <div class="food-name">🍗 Ức gà xào xả ớt</div>
+                <div class="food-calories">350 calo/phần</div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('chicken', -1)">-</button>
+                    <input type="number" class="quantity-input" id="chicken" value="0" min="0" onchange="updateTotal()">
+                    <button class="quantity-btn" onclick="changeQuantity('chicken', 1)">+</button>
+                    <span style="margin-left: 10px;">phần</span>
+                </div>
+                <div class="item-total" id="chicken-total">0 calo</div>
+            </div>
+
+            <div class="food-item">
+                <div class="food-name">🥚 Trứng luộc</div>
+                <div class="food-calories">120 calo/quả</div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('boiledegg', -1)">-</button>
+                    <input type="number" class="quantity-input" id="boiledegg" value="0" min="0" onchange="updateTotal()">
+                    <button class="quantity-btn" onclick="changeQuantity('boiledegg', 1)">+</button>
+                    <span style="margin-left: 10px;">quả</span>
+                </div>
+                <div class="item-total" id="boiledegg-total">0 calo</div>
+            </div>
+
+            <div class="food-item">
+                <div class="food-name">🥬 Rau muống luộc</div>
+                <div class="food-calories">20 calo/phần</div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('spinach', -1)">-</button>
+                    <input type="number" class="quantity-input" id="spinach" value="0" min="0" onchange="updateTotal()">
+                    <button class="quantity-btn" onclick="changeQuantity('spinach', 1)">+</button>
+                    <span style="margin-left: 10px;">phần</span>
+                </div>
+                <div class="item-total" id="spinach-total">0 calo</div>
+            </div>
+
+            <div class="food-item">
+                <div class="food-name">🥒 Dưa chuột</div>
+                <div class="food-calories">30 calo/quả</div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('cucumber', -1)">-</button>
+                    <input type="number" class="quantity-input" id="cucumber" value="0" min="0" onchange="updateTotal()">
+                    <button class="quantity-btn" onclick="changeQuantity('cucumber', 1)">+</button>
+                    <span style="margin-left: 10px;">quả</span>
+                </div>
+                <div class="item-total" id="cucumber-total">0 calo</div>
+            </div>
         </div>
 
         <div class="total-section">
