@@ -1,416 +1,485 @@
 /* Reset và Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-    min-height: 100vh;
-    padding: 20px;
-    position: relative;
-    overflow-x: hidden;
+  font-family: "Inter", "Segoe UI", "SF Pro Display", -apple-system,
+    BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 25%,
+    #f093fb 50%,
+    #f5576c 75%,
+    #4facfe 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
 }
 
 /* Animated background */
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Floating particles effect */
 body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: -1;
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(255, 255, 255, 0.05) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Main Container */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    border-radius: 30px;
-    padding: 40px;
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.1),
-        0 0 0 1px rgba(255, 255, 255, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    position: relative;
-    overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
 /* Glass morphism effect for container */
 .container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(255, 255, 255, 0.05) 100%);
-    border-radius: 30px;
-    pointer-events: none;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  border-radius: 30px;
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Main Title */
 h1 {
-    text-align: center;
-    color: #fff;
-    margin-bottom: 40px;
-    font-size: 3.5em;
-    font-weight: 800;
-    background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
-    position: relative;
-    z-index: 1;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 3.5em;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 1;
 }
 
 /* Food Grid */
 .food-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;
-    margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
 }
 
 /* Food Item Cards */
 .food-item {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 
-        0 10px 30px rgba(0, 0, 0, 0.1),
-        0 0 0 1px rgba(255, 255, 255, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .food-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.5s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s;
 }
 
 .food-item:hover::before {
-    left: 100%;
+  left: 100%;
 }
 
 .food-item:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 
-        0 20px 50px rgba(0, 0, 0, 0.15),
-        0 0 0 1px rgba(255, 255, 255, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 /* Food Name */
 .food-name {
-    font-weight: 700;
-    color: #2d3748;
-    margin-bottom: 8px;
-    font-size: 1.2em;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 /* Food Calories */
 .food-calories {
-    color: #718096;
-    font-size: 0.9em;
-    margin-bottom: 20px;
-    font-weight: 500;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  color: #718096;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+  font-weight: 500;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Quantity Control */
 .quantity-control {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-    padding: 10px;
-    background: rgba(102, 126, 234, 0.1);
-    border-radius: 15px;
-    border: 1px solid rgba(102, 126, 234, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
 }
 
 /* Quantity Buttons */
 .quantity-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 
-        0 4px 15px rgba(102, 126, 234, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
 }
 
 .quantity-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 
-        0 6px 20px rgba(102, 126, 234, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .quantity-btn:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 /* Quantity Input */
 .quantity-input {
-    width: 70px;
-    text-align: center;
-    border: 2px solid rgba(102, 126, 234, 0.3);
-    border-radius: 12px;
-    padding: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    background: rgba(255, 255, 255, 0.8);
-    color: #2d3748;
-    transition: all 0.3s ease;
+  width: 70px;
+  text-align: center;
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  border-radius: 12px;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.8);
+  color: #2d3748;
+  transition: all 0.3s ease;
 }
 
 .quantity-input:focus {
-    outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
-    background: rgba(255, 255, 255, 1);
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  background: rgba(255, 255, 255, 1);
 }
 
 /* Unit Label */
 .quantity-control span {
-    font-weight: 500;
-    color: #4a5568;
-    font-size: 0.9em;
+  font-weight: 500;
+  color: #4a5568;
+  font-size: 0.9em;
 }
 
 /* Item Total */
 .item-total {
-    text-align: right;
-    font-weight: 700;
-    color: #667eea;
-    font-size: 1.2em;
-    padding: 10px;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-    border-radius: 10px;
-    border: 1px solid rgba(102, 126, 234, 0.2);
-    text-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+  text-align: right;
+  font-weight: 700;
+  color: #667eea;
+  font-size: 1.2em;
+  padding: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(118, 75, 162, 0.1)
+  );
+  border-radius: 10px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  text-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
 }
 
 /* Total Section */
 .total-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    color: white;
-    padding: 35px;
-    border-radius: 25px;
-    text-align: center;
-    margin-top: 30px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 
-        0 15px 35px rgba(102, 126, 234, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: white;
+  padding: 35px;
+  border-radius: 25px;
+  text-align: center;
+  margin-top: 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .total-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(255, 255, 255, 0.05) 100%);
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  pointer-events: none;
 }
 
 /* Total Calories Display */
 .total-calories {
-    font-size: 4em;
-    font-weight: 900;
-    margin-bottom: 15px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 1;
+  font-size: 4em;
+  font-weight: 900;
+  margin-bottom: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
 }
 
 .total-label {
-    font-size: 1.3em;
-    opacity: 0.95;
-    font-weight: 600;
-    margin-bottom: 25px;
-    position: relative;
-    z-index: 1;
+  font-size: 1.3em;
+  opacity: 0.95;
+  font-weight: 600;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Reset Button */
 .reset-btn {
-    background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
-    color: white;
-    border: none;
-    padding: 15px 35px;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 
-        0 6px 20px rgba(229, 62, 62, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    position: relative;
-    z-index: 1;
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 20px rgba(229, 62, 62, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 1;
 }
 
 .reset-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 
-        0 10px 30px rgba(229, 62, 62, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(229, 62, 62, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .reset-btn:active {
-    transform: translateY(-1px);
+  transform: translateY(-1px);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    body {
-        padding: 15px;
-    }
-    
-    .container {
-        padding: 25px;
-        border-radius: 20px;
-    }
-    
-    .food-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    h1 {
-        font-size: 2.5em;
-        margin-bottom: 30px;
-    }
-    
-    .total-calories {
-        font-size: 3em;
-    }
-    
-    .food-item {
-        padding: 20px;
-    }
-    
-    .quantity-control {
-        gap: 10px;
-    }
-    
-    .quantity-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 18px;
-    }
+  body {
+    padding: 15px;
+  }
+
+  .container {
+    padding: 25px;
+    border-radius: 20px;
+  }
+
+  .food-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+  }
+
+  .total-calories {
+    font-size: 3em;
+  }
+
+  .food-item {
+    padding: 20px;
+  }
+
+  .quantity-control {
+    gap: 10px;
+  }
+
+  .quantity-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 2em;
-    }
-    
-    .total-calories {
-        font-size: 2.5em;
-    }
-    
-    .container {
-        padding: 20px;
-    }
-    
-    .food-item {
-        padding: 15px;
-    }
-    
-    .quantity-control {
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-    
-    .quantity-control span {
-        flex-basis: 100%;
-        text-align: center;
-        margin-top: 5px;
-    }
+  h1 {
+    font-size: 2em;
+  }
+
+  .total-calories {
+    font-size: 2.5em;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .food-item {
+    padding: 15px;
+  }
+
+  .quantity-control {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .quantity-control span {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 5px;
+  }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    border-radius: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
 }
 
 /* Loading animation for numbers */
 .item-total,
 .total-calories {
-    animation: numberPulse 0.3s ease-in-out;
+  animation: numberPulse 0.3s ease-in-out;
 }
 
 @keyframes numberPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.add-food-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.add-food-form h2 {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  color: #2d3748;
+}
+
+.add-food-form input {
+  margin: 5px 10px 15px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.add-food-form button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-food-form button:hover {
+  background: linear-gradient(135deg, #38a169, #2f855a);
 }

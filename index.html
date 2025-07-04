@@ -1,180 +1,381 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tính Calories Hàng Ngày</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>🍽️ Tính Calories Hàng Ngày</h1>
-        
-        <div class="food-grid">
-            <div class="food-item">
-                <div class="food-name">🍚 Gạo chín</div>
-                <div class="food-calories">130 calo/100g</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="changeQuantity('rice', -1)">-</button>
-                    <input type="number" class="quantity-input" id="rice" value="0" min="0" onchange="updateTotal()">
-                    <button class="quantity-btn" onclick="changeQuantity('rice', 1)">+</button>
-                    <span style="margin-left: 10px;">phần (100g)</span>
-                </div>
-                <div class="item-total" id="rice-total">0 calo</div>
-            </div>
-
-            <div class="food-item">
-                <div class="food-name">🥛 Sữa đậu nành</div>
-                <div class="food-calories">50 calo/ly</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="changeQuantity('soymilk', -1)">-</button>
-                    <input type="number" class="quantity-input" id="soymilk" value="0" min="0" onchange="updateTotal()">
-                    <button class="quantity-btn" onclick="changeQuantity('soymilk', 1)">+</button>
-                    <span style="margin-left: 10px;">ly</span>
-                </div>
-                <div class="item-total" id="soymilk-total">0 calo</div>
-            </div>
-
-            <div class="food-item">
-                <div class="food-name">🥛 Sữa cô gái Hà Lan</div>
-                <div class="food-calories">126 calo/ly</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="changeQuantity('dutchmilk', -1)">-</button>
-                    <input type="number" class="quantity-input" id="dutchmilk" value="0" min="0" onchange="updateTotal()">
-                    <button class="quantity-btn" onclick="changeQuantity('dutchmilk', 1)">+</button>
-                    <span style="margin-left: 10px;">ly</span>
-                </div>
-                <div class="item-total" id="dutchmilk-total">0 calo</div>
-            </div>
-
-            <div class="food-item">
-                <div class="food-name">🍳 Trứng rán</div>
-                <div class="food-calories">170 calo/quả</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="changeQuantity('egg', -1)">-</button>
-                    <input type="number" class="quantity-input" id="egg" value="0" min="0" onchange="updateTotal()">
-                    <button class="quantity-btn" onclick="changeQuantity('egg', 1)">+</button>
-                    <span style="margin-left: 10px;">quả</span>
-                </div>
-                <div class="item-total" id="egg-total">0 calo</div>
-            </div>
-
-            <div class="food-item">
-                <div class="food-name">🥪 Bánh mì sandwich</div>
-                <div class="food-calories">13 calo/lát</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="changeQuantity('sandwich', -1)">-</button>
-                    <input type="number" class="quantity-input" id="sandwich" value="0" min="0" onchange="updateTotal()">
-                    <button class="quantity-btn" onclick="changeQuantity('sandwich', 1)">+</button>
-                    <span style="margin-left: 10px;">lát</span>
-                </div>
-                <div class="item-total" id="sandwich-total">0 calo</div>
-            </div>
-
-            <div class="food-item">
-                <div class="food-name">🍅 Cà chua</div>
-                <div class="food-calories">20 calo/quả</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="changeQuantity('tomato', -1)">-</button>
-                    <input type="number" class="quantity-input" id="tomato" value="0" min="0" onchange="updateTotal()">
-                    <button class="quantity-btn" onclick="changeQuantity('tomato', 1)">+</button>
-                    <span style="margin-left: 10px;">quả</span>
-                </div>
-                <div class="item-total" id="tomato-total">0 calo</div>
-            </div>
-
-            <div class="food-item">
-                <div class="food-name">🥬 Rau ngót thịt</div>
-                <div class="food-calories">430 calo/phần</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="changeQuantity('vegetable', -1)">-</button>
-                    <input type="number" class="quantity-input" id="vegetable" value="0" min="0" onchange="updateTotal()">
-                    <button class="quantity-btn" onclick="changeQuantity('vegetable', 1)">+</button>
-                    <span style="margin-left: 10px;">phần</span>
-                </div>
-                <div class="item-total" id="vegetable-total">0 calo</div>
-            </div>
-
-            <div class="food-item">
-                <div class="food-name">🥩 Thịt lợn</div>
-                <div class="food-calories">400 calo/phần</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="changeQuantity('pork', -1)">-</button>
-                    <input type="number" class="quantity-input" id="pork" value="0" min="0" onchange="updateTotal()">
-                    <button class="quantity-btn" onclick="changeQuantity('pork', 1)">+</button>
-                    <span style="margin-left: 10px;">phần</span>
-                </div>
-                <div class="item-total" id="pork-total">0 calo</div>
-            </div>
-
-            <div class="food-item">
-                <div class="food-name">🥬 Rau bắp cải</div>
-                <div class="food-calories">25 calo/100g</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="changeQuantity('cabbage', -1)">-</button>
-                    <input type="number" class="quantity-input" id="cabbage" value="0" min="0" onchange="updateTotal()">
-                    <button class="quantity-btn" onclick="changeQuantity('cabbage', 1)">+</button>
-                    <span style="margin-left: 10px;">phần (100g)</span>
-                </div>
-                <div class="item-total" id="cabbage-total">0 calo</div>
-            </div>
-
-            <div class="food-item">
-                <div class="food-name">🍗 Ức gà xào xả ớt</div>
-                <div class="food-calories">350 calo/phần</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="changeQuantity('chicken', -1)">-</button>
-                    <input type="number" class="quantity-input" id="chicken" value="0" min="0" onchange="updateTotal()">
-                    <button class="quantity-btn" onclick="changeQuantity('chicken', 1)">+</button>
-                    <span style="margin-left: 10px;">phần</span>
-                </div>
-                <div class="item-total" id="chicken-total">0 calo</div>
-            </div>
-
-            <div class="food-item">
-                <div class="food-name">🥚 Trứng luộc</div>
-                <div class="food-calories">120 calo/quả</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="changeQuantity('boiledegg', -1)">-</button>
-                    <input type="number" class="quantity-input" id="boiledegg" value="0" min="0" onchange="updateTotal()">
-                    <button class="quantity-btn" onclick="changeQuantity('boiledegg', 1)">+</button>
-                    <span style="margin-left: 10px;">quả</span>
-                </div>
-                <div class="item-total" id="boiledegg-total">0 calo</div>
-            </div>
-
-            <div class="food-item">
-                <div class="food-name">🥬 Rau muống luộc</div>
-                <div class="food-calories">20 calo/phần</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="changeQuantity('spinach', -1)">-</button>
-                    <input type="number" class="quantity-input" id="spinach" value="0" min="0" onchange="updateTotal()">
-                    <button class="quantity-btn" onclick="changeQuantity('spinach', 1)">+</button>
-                    <span style="margin-left: 10px;">phần</span>
-                </div>
-                <div class="item-total" id="spinach-total">0 calo</div>
-            </div>
-
-            <div class="food-item">
-                <div class="food-name">🥒 Dưa chuột</div>
-                <div class="food-calories">30 calo/quả</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="changeQuantity('cucumber', -1)">-</button>
-                    <input type="number" class="quantity-input" id="cucumber" value="0" min="0" onchange="updateTotal()">
-                    <button class="quantity-btn" onclick="changeQuantity('cucumber', 1)">+</button>
-                    <span style="margin-left: 10px;">quả</span>
-                </div>
-                <div class="item-total" id="cucumber-total">0 calo</div>
-            </div>
+      <h1>🍽️ Tính Calories Hàng Ngày</h1>
+      <div class="add-food-form">
+        <h2>➕ Thêm thực phẩm mới</h2>
+        <input
+          type="text"
+          id="newFoodName"
+          placeholder="Tên thực phẩm (vd: Chuối)"
+        />
+        <input
+          type="number"
+          id="newFoodCalories"
+          placeholder="Calo mỗi đơn vị (vd: 89)"
+        />
+        <input type="text" id="newFoodUnit" placeholder="Đơn vị (vd: quả)" />
+        <button onclick="addNewFood()">Thêm</button>
+      </div>
+      <div class="food-grid">
+        <div class="food-item">
+          <div class="food-name">🍚 Gạo chín</div>
+          <div class="food-calories">130 calo/100g</div>
+          <div class="quantity-control">
+            <button class="quantity-btn" onclick="changeQuantity('rice', -1)">
+              -
+            </button>
+            <input
+              type="number"
+              class="quantity-input"
+              id="rice"
+              value="0"
+              min="0"
+              onchange="updateTotal()"
+            />
+            <button class="quantity-btn" onclick="changeQuantity('rice', 1)">
+              +
+            </button>
+            <span style="margin-left: 10px">phần (100g)</span>
+          </div>
+          <div class="item-total" id="rice-total">0 calo</div>
         </div>
 
-        <div class="total-section">
-            <div class="total-calories" id="total-calories">0</div>
-            <div class="total-label">Tổng calories trong ngày</div>
-            <button class="reset-btn" onclick="resetAll()">🔄 Đặt lại tất cả</button>
+        <div class="food-item">
+          <div class="food-name">🥛 Sữa đậu nành</div>
+          <div class="food-calories">50 calo/ly</div>
+          <div class="quantity-control">
+            <button
+              class="quantity-btn"
+              onclick="changeQuantity('soymilk', -1)"
+            >
+              -
+            </button>
+            <input
+              type="number"
+              class="quantity-input"
+              id="soymilk"
+              value="0"
+              min="0"
+              onchange="updateTotal()"
+            />
+            <button class="quantity-btn" onclick="changeQuantity('soymilk', 1)">
+              +
+            </button>
+            <span style="margin-left: 10px">ly</span>
+          </div>
+          <div class="item-total" id="soymilk-total">0 calo</div>
         </div>
+
+        <div class="food-item">
+          <div class="food-name">🥛 Sữa cô gái Hà Lan</div>
+          <div class="food-calories">126 calo/ly</div>
+          <div class="quantity-control">
+            <button
+              class="quantity-btn"
+              onclick="changeQuantity('dutchmilk', -1)"
+            >
+              -
+            </button>
+            <input
+              type="number"
+              class="quantity-input"
+              id="dutchmilk"
+              value="0"
+              min="0"
+              onchange="updateTotal()"
+            />
+            <button
+              class="quantity-btn"
+              onclick="changeQuantity('dutchmilk', 1)"
+            >
+              +
+            </button>
+            <span style="margin-left: 10px">ly</span>
+          </div>
+          <div class="item-total" id="dutchmilk-total">0 calo</div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-name">🍳 Trứng rán</div>
+          <div class="food-calories">170 calo/quả</div>
+          <div class="quantity-control">
+            <button class="quantity-btn" onclick="changeQuantity('egg', -1)">
+              -
+            </button>
+            <input
+              type="number"
+              class="quantity-input"
+              id="egg"
+              value="0"
+              min="0"
+              onchange="updateTotal()"
+            />
+            <button class="quantity-btn" onclick="changeQuantity('egg', 1)">
+              +
+            </button>
+            <span style="margin-left: 10px">quả</span>
+          </div>
+          <div class="item-total" id="egg-total">0 calo</div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-name">🥪 Bánh mì sandwich</div>
+          <div class="food-calories">13 calo/lát</div>
+          <div class="quantity-control">
+            <button
+              class="quantity-btn"
+              onclick="changeQuantity('sandwich', -1)"
+            >
+              -
+            </button>
+            <input
+              type="number"
+              class="quantity-input"
+              id="sandwich"
+              value="0"
+              min="0"
+              onchange="updateTotal()"
+            />
+            <button
+              class="quantity-btn"
+              onclick="changeQuantity('sandwich', 1)"
+            >
+              +
+            </button>
+            <span style="margin-left: 10px">lát</span>
+          </div>
+          <div class="item-total" id="sandwich-total">0 calo</div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-name">🍅 Cà chua</div>
+          <div class="food-calories">20 calo/quả</div>
+          <div class="quantity-control">
+            <button class="quantity-btn" onclick="changeQuantity('tomato', -1)">
+              -
+            </button>
+            <input
+              type="number"
+              class="quantity-input"
+              id="tomato"
+              value="0"
+              min="0"
+              onchange="updateTotal()"
+            />
+            <button class="quantity-btn" onclick="changeQuantity('tomato', 1)">
+              +
+            </button>
+            <span style="margin-left: 10px">quả</span>
+          </div>
+          <div class="item-total" id="tomato-total">0 calo</div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-name">🥬 Rau ngót thịt</div>
+          <div class="food-calories">430 calo/phần</div>
+          <div class="quantity-control">
+            <button
+              class="quantity-btn"
+              onclick="changeQuantity('vegetable', -1)"
+            >
+              -
+            </button>
+            <input
+              type="number"
+              class="quantity-input"
+              id="vegetable"
+              value="0"
+              min="0"
+              onchange="updateTotal()"
+            />
+            <button
+              class="quantity-btn"
+              onclick="changeQuantity('vegetable', 1)"
+            >
+              +
+            </button>
+            <span style="margin-left: 10px">phần</span>
+          </div>
+          <div class="item-total" id="vegetable-total">0 calo</div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-name">🥩 Thịt lợn</div>
+          <div class="food-calories">400 calo/phần</div>
+          <div class="quantity-control">
+            <button class="quantity-btn" onclick="changeQuantity('pork', -1)">
+              -
+            </button>
+            <input
+              type="number"
+              class="quantity-input"
+              id="pork"
+              value="0"
+              min="0"
+              onchange="updateTotal()"
+            />
+            <button class="quantity-btn" onclick="changeQuantity('pork', 1)">
+              +
+            </button>
+            <span style="margin-left: 10px">phần</span>
+          </div>
+          <div class="item-total" id="pork-total">0 calo</div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-name">🥬 Rau bắp cải</div>
+          <div class="food-calories">25 calo/100g</div>
+          <div class="quantity-control">
+            <button
+              class="quantity-btn"
+              onclick="changeQuantity('cabbage', -1)"
+            >
+              -
+            </button>
+            <input
+              type="number"
+              class="quantity-input"
+              id="cabbage"
+              value="0"
+              min="0"
+              onchange="updateTotal()"
+            />
+            <button class="quantity-btn" onclick="changeQuantity('cabbage', 1)">
+              +
+            </button>
+            <span style="margin-left: 10px">phần (100g)</span>
+          </div>
+          <div class="item-total" id="cabbage-total">0 calo</div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-name">🍗 Ức gà xào xả ớt</div>
+          <div class="food-calories">350 calo/phần</div>
+          <div class="quantity-control">
+            <button
+              class="quantity-btn"
+              onclick="changeQuantity('chicken', -1)"
+            >
+              -
+            </button>
+            <input
+              type="number"
+              class="quantity-input"
+              id="chicken"
+              value="0"
+              min="0"
+              onchange="updateTotal()"
+            />
+            <button class="quantity-btn" onclick="changeQuantity('chicken', 1)">
+              +
+            </button>
+            <span style="margin-left: 10px">phần</span>
+          </div>
+          <div class="item-total" id="chicken-total">0 calo</div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-name">🥚 Trứng luộc</div>
+          <div class="food-calories">120 calo/quả</div>
+          <div class="quantity-control">
+            <button
+              class="quantity-btn"
+              onclick="changeQuantity('boiledegg', -1)"
+            >
+              -
+            </button>
+            <input
+              type="number"
+              class="quantity-input"
+              id="boiledegg"
+              value="0"
+              min="0"
+              onchange="updateTotal()"
+            />
+            <button
+              class="quantity-btn"
+              onclick="changeQuantity('boiledegg', 1)"
+            >
+              +
+            </button>
+            <span style="margin-left: 10px">quả</span>
+          </div>
+          <div class="item-total" id="boiledegg-total">0 calo</div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-name">🥬 Rau muống luộc</div>
+          <div class="food-calories">20 calo/phần</div>
+          <div class="quantity-control">
+            <button
+              class="quantity-btn"
+              onclick="changeQuantity('spinach', -1)"
+            >
+              -
+            </button>
+            <input
+              type="number"
+              class="quantity-input"
+              id="spinach"
+              value="0"
+              min="0"
+              onchange="updateTotal()"
+            />
+            <button class="quantity-btn" onclick="changeQuantity('spinach', 1)">
+              +
+            </button>
+            <span style="margin-left: 10px">phần</span>
+          </div>
+          <div class="item-total" id="spinach-total">0 calo</div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-name">🥒 Dưa chuột</div>
+          <div class="food-calories">30 calo/quả</div>
+          <div class="quantity-control">
+            <button
+              class="quantity-btn"
+              onclick="changeQuantity('cucumber', -1)"
+            >
+              -
+            </button>
+            <input
+              type="number"
+              class="quantity-input"
+              id="cucumber"
+              value="0"
+              min="0"
+              onchange="updateTotal()"
+            />
+            <button
+              class="quantity-btn"
+              onclick="changeQuantity('cucumber', 1)"
+            >
+              +
+            </button>
+            <span style="margin-left: 10px">quả</span>
+          </div>
+          <div class="item-total" id="cucumber-total">0 calo</div>
+        </div>
+      </div>
+
+      <div class="total-section">
+        <div class="total-calories" id="total-calories">0</div>
+        <div class="total-label">Tổng calories trong ngày</div>
+        <button class="reset-btn" onclick="resetAll()">
+          🔄 Đặt lại tất cả
+        </button>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
