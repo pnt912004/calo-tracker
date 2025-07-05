@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tính Calories Hàng Ngày</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="search.css"/> 
+    <link rel="stylesheet" href="search.css" />
   </head>
   <body>
     <div class="container">
@@ -13,15 +13,20 @@
       <div class="search-section">
         <div class="search-container">
           <div class="search-input-wrapper">
+            <div id="searchResults" class="search-results"></div>
             <span class="search-icon">🔍</span>
+            <!-- Ô tìm kiếm -->
             <input
               type="text"
               id="searchInput"
               class="search-input"
-              placeholder="Tìm kiếm thực phẩm..."
+              placeholder="Tìm thực phẩm..."
               autocomplete="off"
             />
-            <button class="clear-search" id="clearSearch">✕</button>
+            <!-- Nút clear -->
+            <button id="clearSearch" class="clear-search">×</button>
+            <!-- Kết quả tìm kiếm -->
+            <div id="searchResults" class="search-results"></div>
           </div>
         </div>
         <div class="filter-buttons">
@@ -402,5 +407,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="search.js" defer></script>
   </body>
 </html>
