@@ -5,10 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tính Calories Hàng Ngày</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="search.css"/> 
   </head>
   <body>
     <div class="container">
       <h1>🍽️ Tính Calories Hàng Ngày</h1>
+      <div class="search-section">
+        <div class="search-container">
+          <div class="search-input-wrapper">
+            <span class="search-icon">🔍</span>
+            <input
+              type="text"
+              id="searchInput"
+              class="search-input"
+              placeholder="Tìm kiếm thực phẩm..."
+              autocomplete="off"
+            />
+            <button class="clear-search" id="clearSearch">✕</button>
+          </div>
+        </div>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Tất cả</button>
+          <button class="filter-btn" data-filter="rice">Cơm & Ngũ cốc</button>
+          <button class="filter-btn" data-filter="drink">Đồ uống</button>
+          <button class="filter-btn" data-filter="protein">Protein</button>
+          <button class="filter-btn" data-filter="vegetable">Rau củ</button>
+          <button class="filter-btn" data-filter="custom">Tự thêm</button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+      </div>
       <div class="add-food-form">
         <h2>➕ Thêm thực phẩm mới</h2>
         <input
