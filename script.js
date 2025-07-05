@@ -6,6 +6,12 @@ const foodCalories = {
   sandwich: 13,
   tomato: 20,
   vegetable: 430,
+  pork: 400,
+  cabbage: 25,
+  chicken: 350,
+  boiledegg: 120,
+  spinach: 20,
+  cucumber: 30,
 };
 
 function changeQuantity(foodId, change) {
